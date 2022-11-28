@@ -92,10 +92,19 @@ const run = async (client, interaction) => {
 
 
     interaction.reply({content: "Raid created", ephemeral: true})
-    return interaction.channel.send({embeds: [newEmbed]})
+
+    interaction.channel.send({embeds: [newEmbed]})
     .then(msg => {
         setTimeout(() => msg.delete(), 180000)
       })
+
+    return interaction.channel.threads.create({
+        name: `${interaction.user.tag}'s raid: ${code.toUpperCase()} thread`,
+        autoArchiveDuration: 60,
+	    reason: 'New raid was made',
+    }).then(thrd => {
+        setTimeout(() => thrd.delete(), 360000)
+    });
 }
 
 module.exports = {
