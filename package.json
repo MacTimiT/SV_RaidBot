@@ -1,0 +1,15 @@
+{
+  "name": "svrb",
+  "version": "1.0.0",
+  "description": "Scarlet Violet Raid Bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MacTimiT",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.12.0",
+    "glob": "^8.0.3"
+  }
+}
